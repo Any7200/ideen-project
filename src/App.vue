@@ -1,32 +1,52 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app absolute
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <router-link
+          to="/">
+          <v-img
+            alt="Tecnológico de Monterrey Logo"
+            src="./assets/logoTec.png"
+            width="140"
+          />
+        </router-link>
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <router-link
+        style="text-decoration: none; color: inherit;"
+        to="/">
+        <v-btn text>
+          Inicio
+        </v-btn>
+      </router-link>
+      <router-link
+        style="text-decoration: none; color: inherit;"
+        to="/materias">
+        <v-btn text>
+          Lista de Materias
+        </v-btn>
+      </router-link>
+    </v-app-bar>
+
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
